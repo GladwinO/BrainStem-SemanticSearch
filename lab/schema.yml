@@ -1,0 +1,10 @@
+Subject:
+  fields: {name: str, state: str}
+Recording:
+  fields: {brain_region: str, probe_type: str, subject: FK→Subject}
+
+aliases:
+  hippocampus: Hippocampus
+  hippo: Hippocampus
+  sleeping: REM
+  neuropixels: Neuropixels
