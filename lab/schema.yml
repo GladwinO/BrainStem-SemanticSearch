@@ -1,10 +1,13 @@
-Subject:
-  fields: {name: str, state: str}
-Recording:
-  fields: {brain_region: str, probe_type: str, subject: FK→Subject}
+models:
+  Subject:
+    fields: {name: str, state: str}
+  Recording:
+    fields: {brain_region: str, probe_type: str, subject: FK→Subject}
 
-aliases:
-  hippocampus: Hippocampus
-  hippo: Hippocampus
-  sleeping: REM
-  neuropixels: Neuropixels
+meta:
+  aliases:
+    hippocampus: Hippocampus
+    hippo: Hippocampus
+    sleeping: REM
+    neuropixels: Neuropixels
+    awake: awake
