@@ -1,9 +1,9 @@
 import django, os, json
 
+from lab.semantic import ask_llm, run_query
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "playground.settings")
 django.setup()
-
-from lab.semantic import ask_llm, run_query
 
 while True:
     q = input("\nAsk › ").strip()

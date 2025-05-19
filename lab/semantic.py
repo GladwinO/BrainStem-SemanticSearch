@@ -13,7 +13,11 @@ search_tool = {
     "type": "function",
     "function": {
         "name": "build_django_query",
-        "description": "Turn plain English into a Django filter payload. For recordings from brain regions, use Recording model with filters like brain_region='hippocampus'. For subject conditions, use subject__state format. Extract filters from a query about neural recordings or subjects. ALWAYS scan the query for potential filters before deciding on a model.",
+        "description": "Turn plain English into a Django filter payload. "
+        "For recordings from brain regions, use Recording model with filters like brain_region='hippocampus'. "
+        "For subject conditions, use subject__state format. "
+        "Extract filters from a query about neural recordings or subjects. "
+        "ALWAYS scan the query for potential filters before deciding on a model.",
         "parameters": {
             "type": "object",
             "properties": {
@@ -94,9 +98,9 @@ def ask_llm(question):
 
     # Second pass: Build query with highlighted entities
     system = f"""You know this schema:\n{json.dumps(SCHEMA, indent=2)}
-    
+
     ENTITIES FOUND IN QUERY: {entities}
-    
+
     Use these entities to create appropriate filters. For example, if 'tetrode' is found,
     include {{"probe_type": "Tetrode"}} in filters.
     STEP 1: ALWAYS scan for filtering terms first (brain regions, probe types, subject states)
