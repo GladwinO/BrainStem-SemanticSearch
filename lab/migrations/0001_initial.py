@@ -44,8 +44,7 @@ class Migration(migrations.Migration):
                 (
                     "subject",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="lab.subject"
+                        on_delete=django.db.models.deletion.CASCADE, to="lab.subject"
                     ),
                 ),
             ],

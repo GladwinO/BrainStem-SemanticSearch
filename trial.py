@@ -1,4 +1,4 @@
-import django, os, json, os, sys # sys good for production code
+import django, os, json, os, sys  # sys good for production code
 
 from dotenv import load_dotenv
 from lab.semantic import ask_llm, run_query
@@ -7,13 +7,13 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "playground.settings")
 django.setup()
 
 ## This section is for local API connection ##
-load_dotenv() # Load environment variables from .env file
+load_dotenv()  # Load environment variables from .env file
 
 try:
     key = os.environ["OPENAI_API_KEY"]
 except KeyError:
     print("Error: OPENAI_API_KEY environment variable is required")
-    sys.exit(1) # good for production code
+    sys.exit(1)  # good for production code
 
 ###############################################
 
